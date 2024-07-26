@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-//junta tudo
+//orquestrador de dependecias
 @Module({
   imports: [],
   controllers: [AppController],
