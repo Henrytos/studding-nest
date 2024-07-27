@@ -56,9 +56,4 @@ export class CreateAccountController {
       message: 'user created successfully',
     };
   }
-
-  @Get('ab*cd')
-  findAll() {
-    return 'This route uses a wildcard';
-  }
 }
