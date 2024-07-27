@@ -8,3 +8,8 @@ Content-Type: application/json
     "password":"1234567",
     "name":"henry"
 }
+
+###
+
+GET {{api}}/create-account
+Content-Type: application/json

@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   Post,
+  Redirect,
   UsePipes,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
@@ -56,4 +57,11 @@ export class CreateAccountController {
       message: 'user created successfully',
     };
   }
+
+  @Get()
+  @Redirect(
+    'https://www.youtube.com/watch?v=S36SCGmskww&list=RDS36SCGmskww&start_radio=1',
+    301,
+  )
+  getMyFavoriteMusic() {}
 }
