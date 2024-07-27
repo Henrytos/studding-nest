@@ -1,0 +1,10 @@
+@api=http://localhost:3000
+
+POST {{api}}/create-account
+Content-Type: application/json
+
+{
+    "email":"franzhenry@gmail.com",
+    "password":"1234567",
+    "name":"henry"
+}
