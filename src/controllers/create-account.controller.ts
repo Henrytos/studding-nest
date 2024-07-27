@@ -1,4 +1,11 @@
-import { Body, Controller, HttpCode, Post, UsePipes } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  Post,
+  UsePipes,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { hash } from 'bcrypt';
 import { ConflictException } from '@nestjs/common';
@@ -48,5 +55,10 @@ export class CreateAccountController {
     return {
       message: 'user created successfully',
     };
+  }
+
+  @Get('ab*cd')
+  findAll() {
+    return 'This route uses a wildcard';
   }
 }
