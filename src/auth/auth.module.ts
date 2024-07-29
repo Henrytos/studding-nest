@@ -1,19 +1,24 @@
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
+import { PassportModule } from '@nestjs/passport';
 import { Env } from 'src/env';
 
 @Module({
   imports: [
+    PassportModule,
     JwtModule.registerAsync({
+      global: true,
       inject: [ConfigService],
-      useFactory(configService: ConfigService<Env, true>) {
-        const secret = configService.get('JWT_SECRET');
+      useFactory(config: ConfigService<Env, true>) {
+        const privateKeySecret = config.get('JWT_PRIVATE_KEY');
+        const publicKeySecret = config.get('JWT_PUBLIC_KEY');
         return {
-          secret,
-          verifyOptions: {
-            algorithms: ['RS256'],
+          signOptions: {
+            algorithm: 'RS256',
           },
+          publicKey: Buffer.from(publicKeySecret, 'base64'),
+          privateKey: Buffer.from(privateKeySecret, 'base64'),
         };
       },
     }),

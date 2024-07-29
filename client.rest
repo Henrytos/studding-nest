@@ -13,3 +13,9 @@ Content-Type: application/json
 
 GET {{api}}/create-account
 Content-Type: application/json
+
+
+### 
+
+GET {{api}}/sessions
+Content-Type: application/json
