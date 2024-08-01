@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { envSchema } from './env';
 import { AuthenticateController } from './controllers/authenticate.controller';
 import { AuthModule } from './auth/auth.module';
+import { CreateTodoController } from './controllers/create-todo.controller';
 
 //orquestrador de dependecias
 @Module({
@@ -15,7 +16,11 @@ import { AuthModule } from './auth/auth.module';
     }),
     AuthModule,
   ],
-  controllers: [CreateAccountController, AuthenticateController],
+  controllers: [
+    CreateAccountController,
+    AuthenticateController,
+    CreateTodoController,
+  ],
   providers: [PrismaService],
 })
 export class AppModule {}

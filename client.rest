@@ -1,5 +1,7 @@
 @api=http://localhost:3333
+@token= {{authenticate.response.body.access_token}}
 
+###
 POST {{api}}/create-account
 Content-Type: application/json
 
@@ -9,13 +11,20 @@ Content-Type: application/json
     "name":"henry"
 }
 
-###
-
-GET {{api}}/create-account
-Content-Type: application/json
 
 
 ### 
+# @name authenticate
+POST {{api}}/sessions
+Content-Type: application/json
 
-GET {{api}}/sessions
+{
+    "email":"franzhenry@gmail.com",
+    "password":"1234567"
+}
+
+### 
+@name = create-todo
+POST {{api}}/create-todo
+Authorization: Bearer {{token}}
 Content-Type: application/json
