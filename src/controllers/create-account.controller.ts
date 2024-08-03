@@ -1,12 +1,4 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  Post,
-  Redirect,
-  UsePipes,
-} from '@nestjs/common';
+import { Body, Controller, HttpCode, Post, UsePipes } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { hash } from 'bcrypt';
 import { ConflictException } from '@nestjs/common';
@@ -21,7 +13,7 @@ const createAccountBodySchema = z.object({
 
 type CreateAccountBodySchema = z.infer<typeof createAccountBodySchema>;
 
-@Controller('create-account')
+@Controller('/accounts')
 export class CreateAccountController {
   constructor(private prisma: PrismaService) {}
 

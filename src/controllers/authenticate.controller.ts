@@ -25,7 +25,7 @@ export class AuthenticateController {
   ) {}
 
   @Post()
-  @HttpCode(201)
+  @HttpCode(200)
   async handle(@Body() { email, password }: AuthenticateBodySchema) {
     const user = await this.prisma.user.findUnique({
       where: {

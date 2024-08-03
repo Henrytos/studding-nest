@@ -1,14 +1,14 @@
-@api=http://localhost:3333
+@api=http://localhost:8080
 @token= {{authenticate.response.body.access_token}}
 
 ###
-POST {{api}}/create-account
+POST {{api}}/accounts
 Content-Type: application/json
 
 {
-    "email":"franzhenry@gmail.com",
-    "password":"1234567",
-    "name":"henry"
+    "name":"henry franz",
+    "email":"examdsadasdasple1@gmail.com",
+    "password":"12345678",
 }
 
 
@@ -24,7 +24,12 @@ Content-Type: application/json
 }
 
 ### 
-@name = create-todo
-POST {{api}}/create-todo
+@name = todos
+POST {{api}}/todos
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+{
+    "title": "new-todo",
+    "description": "new-todo-description",
+}
