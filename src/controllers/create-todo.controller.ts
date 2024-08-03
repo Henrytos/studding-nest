@@ -1,7 +1,6 @@
 import { Controller, HttpCode, Post, Req, UseGuards } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { Request } from 'express';
 import { CurrentUser } from 'src/auth/cuerrent.user.decorator';
 import { UserPayload } from 'src/auth/jwt.strategy';
 
