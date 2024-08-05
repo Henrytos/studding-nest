@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { AuthModule } from './auth/auth.module';
-import { envSchema } from './env';
-import { HttpModule } from './http/http.module';
+import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
+import { AuthModule } from './auth/auth.module'
+import { envSchema } from './env'
+import { HttpModule } from './http/http.module'
 
 // orquestrador de dependecias
 @Module({
@@ -12,7 +12,7 @@ import { HttpModule } from './http/http.module';
       isGlobal: true,
     }),
     AuthModule,
-    HttpModule
+    HttpModule,
   ],
 })
 export class AppModule {}

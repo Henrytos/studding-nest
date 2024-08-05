@@ -1,6 +1,6 @@
 {
   "extends": "@rocketseat/eslint-config/node",
   "rules": {
-    "constructor-super": "error"
+    "no-useless-constructor":"off"
   }
 }
